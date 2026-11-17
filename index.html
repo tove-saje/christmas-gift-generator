@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Christmas Gift Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="snow" aria-hidden="true"></div>
+
+  <main>
+    <header>
+      <p class="eyebrow">✦ Find the perfect present ✦</p>
+      <h1>Christmas Gift Generator</h1>
+      <p class="sub">Answer a few quick questions and get 5 gift ideas picked just for them.</p>
+    </header>
+
+    <form id="quiz">
+      <section class="card">
+        <h2>1. Who are you shopping for?</h2>
+        <div class="chips" data-name="who" data-opts="Friend|Sister|Brother|Mom|Dad|Partner|Colleague|Other"></div>
+      </section>
+
+      <section class="card">
+        <h2>2. Gender?</h2>
+        <div class="chips" data-name="gender" data-opts="Female=female|Male=male|Prefer not to say=any"></div>
+      </section>
+
+      <section class="card">
+        <h2>3. Social personality?</h2>
+        <div class="chips" data-name="social" data-opts="Always out=out|Homebody=home|Somewhere in between=both"></div>
+      </section>
+
+      <section class="card">
+        <h2>4. Their taste?</h2>
+        <div class="chips" data-name="taste" data-opts="Luxury lover=luxury|Practical=practical|Sentimental=sentimental|Quirky=quirky|A mix=mix"></div>
+      </section>
+
+      <section class="card">
+        <h2>5. Your budget?</h2>
+        <label class="money">$ <input type="number" id="budget" min="5" step="1" placeholder="50" required></label>
+      </section>
+
+      <section class="card">
+        <h2>6. How hard are they to shop for?</h2>
+        <div class="chips" data-name="difficulty" data-opts="Easy|Picky|Has everything|Impossible to please"></div>
+      </section>
+
+      <section class="card">
+        <h2>7. Three things they love</h2>
+        <div class="trio">
+          <input class="love" placeholder="e.g. coffee" maxlength="40">
+          <input class="love" placeholder="e.g. hiking" maxlength="40">
+          <input class="love" placeholder="e.g. cats" maxlength="40">
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>8. Three things they hate</h2>
+        <div class="trio">
+          <input class="hate" placeholder="e.g. clutter" maxlength="40">
+          <input class="hate" placeholder="e.g. perfume" maxlength="40">
+          <input class="hate" placeholder="e.g. tea" maxlength="40">
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>9. Any fun facts? <span class="opt">(optional)</span></h2>
+        <textarea id="facts" rows="2" maxlength="200" placeholder="e.g. just got a puppy, obsessed with Italy"></textarea>
+      </section>
+
+      <button type="submit" class="btn">🎁 Find Gifts</button>
+    </form>
+
+    <section id="results" hidden>
+      <h2 id="results-title">Your gift ideas</h2>
+      <p id="note" class="note"></p>
+      <div id="list"></div>
+      <div class="actions">
+        <button id="more" class="btn">✨ Find More Gifts</button>
+        <button id="restart" class="btn ghost">Start over</button>
+      </div>
+    </section>
+
+    <footer>Prices are approximate. Shop links open a search on Amazon.</footer>
+  </main>
+
+  <script src="gifts.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
